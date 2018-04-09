@@ -94,9 +94,9 @@
         
         <?php
         if(isset($_POST['submit'])){
-            $servername="lamp.eng.fau.edu";
+            $servername="10.123.0.99";
             $username="ngacharich2014";
-            $password="Boca5i6LST";
+            $password="B1Q3Easbeh";
 
             $conn = new mysql_connect($servername,$username,$password);
 
@@ -106,7 +106,7 @@
 
             mysql_select_db("ngacharich2014",$con);
 
-            $sql="INSERT INTO project(znumber,classname) VALUES ('$_POST[znumber]','$_POST[classname])";
+            $sql="INSERT INTO project(znumber,classname) VALUES ('$_POST[znumber]','$_POST[classname]')";
 
             mysql_query($sql,$con);
             $message = "inserted";
