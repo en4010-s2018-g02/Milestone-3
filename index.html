@@ -98,10 +98,10 @@
             $username="ngacharich2014";
             $password="Boca5i6LST";
 
-            $con = mysql_connect($servername,$username,$password);
+            $conn = new mysql_connect($servername,$username,$password);
 
-            if(!$con){
-                die("Cannot connect:" .mysql_error());
+            if($conn->connect_error){
+                die("Cannot connect:" . $conn->connect_error);
             }
 
             mysql_select_db("ngacharich2014",$con);
@@ -111,9 +111,8 @@
             mysql_query($sql,$con);
             $message = "inserted";
             echo "<script type='text/javascript'>alert('$message');</script>";
-            mysql_close();
-
-        }
+            }           
+            $conn->close();
 
         ?>
 
