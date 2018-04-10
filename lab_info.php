@@ -10,15 +10,12 @@ if(isset($_POST['submit'])){
     if (mysqli_connect_error()) {
         die("Database connection failed: " . mysqli_connect_error());
     }
-    mysql_select_db($db,$con);
+    mysql_select_db($db,$conn);
 
     $sql="INSERT INTO module3(znumber,classname) VALUES ('$_POST[znumber]','$_POST[classname]')";
 
-    mysql_query($sql,$con);
-    $message = "inserted";
-    <script type='text/javascript' alert('$message');
-    </script>
-
-        $conn->close();
+    mysql_query($sql,$conn);
+   
+    mysql_close($conn);
 
 ?>
