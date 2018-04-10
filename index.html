@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -94,10 +93,10 @@
 
         <?php
 if(isset($_POST['submit'])){
-$servername="10.123.0.99";
-$username="ngacharich2014";
-$password="B1Q3Easbeh";
-$db="ngacharich_p";
+$servername="lamp.eng.fau.edu";
+$username="CEN4010_S2018g02";
+$password="cen4010_s2018";
+$db="CEN4010_S2018g02";
 
 $conn = new mysql_connect($servername,$username,$password);
 
@@ -107,19 +106,17 @@ die("Cannot connect:" . $conn->connect_error);
 
 mysql_select_db($db,$con);
 
-$sql="INSERT INTO project(znumber,classname) VALUES ($_POST['znumber'],$_POST['classname'])";
+$sql="INSERT INTO module3(znumber,classname) VALUES ($_POST['znumber'],$_POST['classname'])";
 
 mysql_query($sql,$con);
 $message = "inserted";
 echo "<script type='text/javascript'>alert('$message');</script>";
-}           
+}        
 $conn->close();
 
 ?>
 
 
+
     </body>
 </html>
-
-
-
