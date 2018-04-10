@@ -70,7 +70,7 @@
 
         <h3>Lab Registration</h3>
 
-        <form action="index.html" method="POST">
+        <form action="lab_info.php" method="POST">
             <div class="imgcontainer">
                 <img src="florida_atlantic_football.png" alt="Avatar" class="avatar">
             </div>
@@ -82,7 +82,7 @@
                 <label><b>Classname</b></label>
                 <input type="text" placeholder="Enter class" name="classname" required>
 
-                <input type="submit" name="submit" value="Add">
+                <input type="submit" name="submit" value="Add" onclick="myfunction()">
                 <input type="checkbox" > I agree to the term and conditions of the lab
             </div>
 
@@ -90,6 +90,12 @@
 
             </div>
         </form>
+
+        <script>
+            function myFunction(){
+                alert("Inserted!");
+            }
+        </script>
 
 
 
