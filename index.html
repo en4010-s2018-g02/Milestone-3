@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <html>
-    
+
     <style>
         form {
             border: 3px solid #f1f1f1;
@@ -91,35 +91,35 @@
 
             </div>
         </form>
-        
+
         <?php
-        if(isset($_POST['submit'])){
-            $servername="10.123.0.99";
-            $username="ngacharich2014";
-            $password="B1Q3Easbeh";
+if(isset($_POST['submit'])){
+$servername="10.123.0.99";
+$username="ngacharich2014";
+$password="B1Q3Easbeh";
+$db="ngacharich_p";
 
-            $conn = new mysql_connect($servername,$username,$password);
+$conn = new mysql_connect($servername,$username,$password);
 
-            if($conn->connect_error){
-                die("Cannot connect:" . $conn->connect_error);
-            }
+if($conn->connect_error){
+die("Cannot connect:" . $conn->connect_error);
+}
 
-            mysql_select_db("ngacharich2014",$con);
+mysql_select_db($db,$con);
 
-            $sql="INSERT INTO project(znumber,classname) VALUES ('$_POST[znumber]','$_POST[classname]')";
+$sql="INSERT INTO project(znumber,classname) VALUES ($_POST['znumber'],$_POST['classname'])";
 
-            mysql_query($sql,$con);
-            $message = "inserted";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-            }           
-            $conn->close();
+mysql_query($sql,$con);
+$message = "inserted";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}           
+$conn->close();
 
-        ?>
+?>
 
 
     </body>
 </html>
-
 
 
 
