@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     }
     mysql_select_db($db,$con);
 
-    $sql="INSERT INTO module3(znumber,classname) VALUES ($_POST['znumber'],$_POST['classname'])";
+    $sql="INSERT INTO module3(znumber,classname) VALUES ('$_POST[znumber]','$_POST[classname]')";
 
     mysql_query($sql,$con);
     $message = "inserted";
