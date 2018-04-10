@@ -109,8 +109,8 @@ $sql="INSERT INTO module3(znumber,classname) VALUES ($_POST['znumber'],$_POST['c
 
 mysql_query($sql,$con);
 $message = "inserted";
-echo "<script type='text/javascript' alert('$message')
-</script>";
+<script type='text/javascript' alert('$message');
+</script>
 
 $conn->close();
 
