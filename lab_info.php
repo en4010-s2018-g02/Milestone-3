@@ -5,17 +5,17 @@ if(isset($_POST['submit'])){
     $password="cen4010_s2018";
     $db="CEN4010_S2018g02";
 
-    $conn = new mysql_connect($servername,$username,$password);
+    $conn =  mysqli_connect($servername,$username,$password);
 
     if (mysqli_connect_error()) {
         die("Database connection failed: " . mysqli_connect_error());
     }
-    mysql_select_db($db,$conn);
+    mysqli_select_db($db);
 
     $sql="INSERT INTO module3(znumber,classname) VALUES ('$_POST[znumber]','$_POST[classname]')";
 
-    mysql_query($sql,$conn);
+    mysqli_query($sql,$conn);
    
-    mysql_close($conn);
-
+    mysqli_close($conn);
+  }
 ?>
